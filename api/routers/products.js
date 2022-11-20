@@ -3,13 +3,13 @@ const router=express.Router();
 
 router.get('/',(req,res,next)=>{
     res.status(200).json({
-        message:'Hangling GET request to /products'
+        message:'Handling GET request to /products'
     });
 });
 
 router.post('/',(req,res,next)=>{
-    res.status(200).json({
-        message:'Hangling POST request to /products'
+    res.status(201).json({
+        message:'Handling POST request to /products'
     });
 });
 
@@ -25,6 +25,18 @@ if(id==='special'){
         message:'You passed an ID'
     });
 }
+});
+
+router.patch('/:productsId',(req,res,next)=>{
+    res.status(200).json({
+        message:'UPDATE product'
+    });
+});
+
+router.delete('/:productsId',(req,res,next)=>{
+    res.status(200).json({
+        message:'DELETE product'
+    });
 });
 
 module.exports=router;
