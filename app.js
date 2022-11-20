@@ -7,6 +7,7 @@ const productsRouter= require('./api/routers/products');
         message:'It works'
     });
 });*/
+
 app.use('/products',productsRouter);
 
 module.exports = app;

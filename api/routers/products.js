@@ -1,14 +1,14 @@
 const express=require('express');
 const router=express.Router();
 
-router.get('./',(req,res,next)=>{
-    req.status(200).json({
+router.get('/',(req,res,next)=>{
+    res.status(200).json({
         message:'Hangling GET request to /products'
     });
 });
 
-router.post('./',(req,res,next)=>{
-    req.status(200).json({
+router.post('/',(req,res,next)=>{
+    res.status(200).json({
         message:'Hangling POST request to /products'
     });
 });
