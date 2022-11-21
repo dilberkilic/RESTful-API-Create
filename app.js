@@ -19,6 +19,30 @@ app.use(bodyParser.json());
 app.use('/products',productsRoute);
 
 app.use('/orders',ordersRoute);
+//HATALARI ÖNLEMİMİZİ SAĞLAR
+app.use((res,req,next)=>{
+    res.header(
+        "Access-Control-Allow-Orijin","*"
+    );
+});
+
+app.use((res,req,next)=>{
+    res.header(
+        "Access-Control-Allow-Headers",
+        "Orijin, X-Requested, Content-Type, Accept, Authorization"
+    );
+    if(req.method=="OPTIONS"){
+        res.header(
+            'Access-Control-Allow-Methods',
+            'POST, GET, DELETE, PATCH, PUT'
+
+        );
+        return res.status(200).json({});
+    }
+
+    next();
+    
+});
 
 app.use((req,res,next)=>{
     const error=new Error('Not Found');
