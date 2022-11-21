@@ -3,7 +3,7 @@ const router=express.Router();
 
 router.get('/',(req,res,next)=>{
     res.status(200).json({
-        message:'Handling GET request to /products'
+        message:'Handling GET request to /products Dilber ENESİ ÇOK SEVİYOR'
     });
 });
 
