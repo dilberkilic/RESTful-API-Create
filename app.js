@@ -6,7 +6,8 @@ const morgan=require('morgan');
 const mongoose=require('mongoose');
 const bodyParser=require('body-parser');
 
-mongoose.connect('mongodb+srv://admin:'+process.env.MONGO_ATLAS_PW+'@atlascluster.9wsb9y1.mongodb.net/?retryWrites=true&w=majority')
+mongoose.connect('mongodb+srv://admin:'+process.env.MONGO_ATLAS_PW+'@atlascluster.9wsb9y1.mongodb.net/?retryWrites=true&w=majority');
+mongoose.Promise=global.Promise;
 
 /*app.use((req,res,next)=>{
     res.status(200).json({
